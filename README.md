@@ -1,3 +1,14 @@
+### [위키](https://github.com/DGU-Study/weekly-ps/wiki)
+
+~~수정하고 싶은 부분 있을 때 상시 수정 해주세요!~~
+
+#### 🐘 알고리즘
+[[Algorithm Wiki] 이분탐색](https://github.com/DGU-Study/weekly-ps/wiki/%5BAlgorithm-Wiki%5D-%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89)
+
+#### 🐘 주차별 공부 기록
+[[Weekly Study] 220925](https://github.com/DGU-Study/weekly-ps/wiki/%5BWeekly-Study%5D-220925) <br/>
+[[Weekly Study] 221002](https://github.com/DGU-Study/weekly-ps/wiki/%5BWeekly-Study%5D-221002) <br/>
+
 ### 백준
 
 ### 프로그래머스
