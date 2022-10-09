@@ -11,7 +11,6 @@ def solution(distance, rocks, n):
         mid = (low+high)//2
         current = 0
         remove = 0 
-        min_diff = distance
         
         idx += 1
         for rock in rock_list:
