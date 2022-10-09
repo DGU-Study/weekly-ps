@@ -1,12 +1,3 @@
-'''
-n: 100 개의 송전탑 
-wires: 99개의 전선 정보
-
-트리 형태임으로 
-n은 노드의 개수
-wires은 간선의 개수이다
-
-'''
 from collections import deque
 
 def bfs(tree, start, visited):
@@ -40,10 +31,3 @@ def solution(n, wires):
             answer = result
 
     return answer
-
-testcase = [[9, [[1,3],[2,3],[3,4],[4,5],[4,6],[4,7],[7,8],[7,9]]],
-            [4,	[[1,2],[2,3],[3,4]]],
-            [7,	[[1,2],[2,7],[3,7],[3,4],[4,5],[6,7]]]]
-
-for n, wires in testcase:
-	print(solution(n, wires))
