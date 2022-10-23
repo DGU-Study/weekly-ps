@@ -4,6 +4,9 @@
 |:-:|:-:|:-|:-:|:-:|
 |Gold5|12865|[평범한 배낭](https://www.acmicpc.net/problem/12865)|동적계획법|2022년 10월 16일|
 |Gold2|9370|[미확인 도착지](https://www.acmicpc.net/problem/9370)|그래프|2022년 10월 16일|
+|Gold4|1922|[네트워크 연결](https://www.acmicpc.net/problem/1922)|최소 스패닝 트리|2022년 10월 23일|
+|Gold3|14621|[나만 안되는 연애](https://www.acmicpc.net/problem/14621)|최소 스패닝 트리|2022년 10월 23일|
+
 
 ## ✍️ 프로그래머스
 
