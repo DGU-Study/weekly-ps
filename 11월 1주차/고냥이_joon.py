@@ -1,12 +1,13 @@
 # 고냥이
 n = int(input())
-letter = input().strip()
+letter = input()
 
 ans,left, right = 0,0,0
-sets = set(letters[left])
+sets = set(letter[left])
 
 if len(letter) == 1:
   print(1)
+
 if len(set(letter)) <= n:
   print(len(letter))
 
