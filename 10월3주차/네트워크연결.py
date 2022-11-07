@@ -11,6 +11,7 @@ def union_node(root, n1, n2):
   else:
     root[n2] = n1
 
+
 import sys
 si = sys.stdin.readline
 
