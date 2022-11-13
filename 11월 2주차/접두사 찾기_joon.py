@@ -9,4 +9,4 @@ for i in range(m):
     if letters[j].startswith(check[i]):
       cnt += 1
       break 
-print(cnt)
+print(cnt) 
