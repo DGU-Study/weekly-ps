@@ -28,7 +28,7 @@ def search_base_camp(i,j):
                 visited[a][b] = 1
                 d.append([cnt+1,a,b])
     answer_list = sorted(answer_list,key=lambda x: (x[0],x[1]))
-
+    
     return answer_list[0][0],answer_list[0][1]
 
         
