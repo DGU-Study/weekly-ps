@@ -72,6 +72,31 @@ def fight(player1,player2,answer):
         else:
             answer[player2]+=abs(player1_force-player2_force)
             return player2,player1,answer
+def round_main():
+    global answer
+    if curr_location[next_x][next_y]: #현재 위치에 다른 플레이어가 존재할 경우
+        
+        player2 = curr_location[next_x][next_y]
+
+        winner,loser,answer = fight(player1,player2,answer)
+        
+        loser_direction = curr_direction[loser]
+        
+        player_location[winner] = [next_x,next_y]
+        curr_location[next_x][next_y] = winner
+        curr_location[x][y] = 0
+        loser_move(loser,loser_direction,next_x,next_y)
+        winner_move(winner,next_x,next_y)
+
+    else: # 현재 위치에 아무도 없으므로 그냥 이동함 
+        curr_location[next_x][next_y]=player1
+        player_location[player1] =[next_x,next_y]
+        curr_location[x][y] = 0
+        if arr[next_x][next_y]:
+            if gun[player1]<arr[next_x][next_y][-1]:
+                arr[next_x][next_y].append(gun[player1])# 진사람은 현재 위치에 총을 버려야함 
+                arr[next_x][next_y] = sorted(arr[next_x][next_y]) 
+                gun[player1] = arr[next_x][next_y].pop()
 
     
 n,m,k = map(int,input().split()) # grid size , players , rounds
@@ -108,30 +133,7 @@ for round in range(k):
         next_x,next_y = next_xy(direction,x,y)
 
         if 0<=next_x<n and 0<=next_y<n:
-
-            if curr_location[next_x][next_y]: #현재 위치에 다른 플레이어가 존재할 경우
-                
-                player2 = curr_location[next_x][next_y]
-
-                winner,loser,answer = fight(player1,player2,answer)
-                
-                loser_direction = curr_direction[loser]
-                
-                player_location[winner] = [next_x,next_y]
-                curr_location[next_x][next_y] = winner
-                curr_location[x][y] = 0
-                loser_move(loser,loser_direction,next_x,next_y)
-                winner_move(winner,next_x,next_y)
-
-            else: # 현재 위치에 아무도 없으므로 그냥 이동함 
-                curr_location[next_x][next_y]=player1
-                player_location[player1] =[next_x,next_y]
-                curr_location[x][y] = 0
-                if arr[next_x][next_y]:
-                    if gun[player1]<arr[next_x][next_y][-1]:
-                        arr[next_x][next_y].append(gun[player1])# 진사람은 현재 위치에 총을 버려야함 
-                        arr[next_x][next_y] = sorted(arr[next_x][next_y]) 
-                        gun[player1] = arr[next_x][next_y].pop()
+            round_main()
                     
         else: # 막다른 길이므로 정반대로 돌아야함 
 
@@ -140,29 +142,7 @@ for round in range(k):
             next_x,next_y = next_xy(direction,x,y)
 
             if 0<=next_x<n and 0<=next_y<n:
-                if curr_location[next_x][next_y]: #현재 위치에 다른 플레이어가 존재할 경우
-                    player2 = curr_location[next_x][next_y]
-
-                    winner,loser,answer = fight(player1,player2,answer)
-                    loser_direction = curr_direction[loser]
-                    player_location[winner] = [next_x,next_y]
-                    curr_location[next_x][next_y] = winner
-                    curr_location[x][y] = 0
-                    loser_move(loser,loser_direction,next_x,next_y)
-                    winner_move(winner,next_x,next_y)
-
-                else: # 현재 위치에 아무도 없으므로 그냥 이동함 
-                    curr_location[next_x][next_y]=player1
-                    player_location[player1] = [next_x,next_y]
-                    curr_location[x][y] = 0
-
-                    if arr[next_x][next_y]:
-                        
-                        if gun[player1]<arr[next_x][next_y][-1]:
-                            
-                            arr[next_x][next_y].append(gun[player1])# 진사람은 현재 위치에 총을 버려야함 
-                            arr[next_x][next_y] = sorted(arr[next_x][next_y]) 
-                            gun[player1] = arr[next_x][next_y].pop()
+                round_main()
     # print(player_location)
 
 print(*answer[1:])
