@@ -10,12 +10,11 @@ class Player {
         this.x = x;
         this.y = y;
         this.d = d;
-        this.s = s; // 플레이어 초기 능력치
+        this.s = s;
         this.a = a; // 공격력
     }
 }
 
-// 격자 위치 + 방향
 class Tuple {
     int x, y, dir;
 
@@ -26,7 +25,6 @@ class Tuple {
     }
 }
 
-// 격자 위치
 class Pair {
     int x, y;
 
@@ -72,7 +70,7 @@ public class Main {
     public static Tuple getNext(int x, int y, int d) {
         int nx = x + dx[d], ny = y + dy[d];
 
-        //  격자 벗어나는 경우에 정반대 방향으로 방향 바꾸어서 1 이동
+        //  격자 벗어나면 방향을 반대방향으로 이동
         if(!inRange(nx, ny)){
             // 반대 방향 : 0 <-> 2 / 1 <-> 3
             d = (d < 2) ? (d + 2) : (d - 2);
@@ -171,7 +169,7 @@ public class Main {
             int s = players[i].s;
             int a = players[i].a;
 
-            // 1-1. 본인이 향하고 있는 방향대로 한 칸만큼 이동
+            // 현재 플레이어가 움직일 그 다음 위치와 방향 구하기
             Tuple next = getNext(x, y, d);
             int nx = next.x, ny = next.y, ndir = next.dir;
 
