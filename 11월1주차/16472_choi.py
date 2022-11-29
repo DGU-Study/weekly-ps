@@ -26,4 +26,3 @@ for L in range(N): # 라이언 인형 K개를 포함하는 집합의 왼쪽
     if A[L]==1: 
         cnt-=1
 print(ans)
-    
