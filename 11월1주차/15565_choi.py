@@ -29,5 +29,7 @@ for R in range(len(s)):
         L+=1
     
     ans=max(ans,R-L+1)
+    
+    print(L,R,ans, cnt)
 
 print(ans)
